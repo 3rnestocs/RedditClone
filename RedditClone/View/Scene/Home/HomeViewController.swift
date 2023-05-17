@@ -35,6 +35,15 @@ class HomeViewController: UIViewController {
         setupNavigationBar()
         setupTableView()
         setupContent()
+        setupObserver()
+    }
+    private func setupObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRejection), name: .redditPermissionsDeclined, object: nil)
+    }
+    
+    @objc private func handleRejection() {
+        hideActivityIndicator(isEmpty: true)
+        displayAlert(title: "Permissions rejected", message: "You've rejected the required permissions on Reddit's page. The app features will remain blocked.", isSingleButton: true)
     }
     
     private func setupContent() {
@@ -96,7 +105,7 @@ class HomeViewController: UIViewController {
     }
     
     private func displayRedditAlert() {
-        self.displayAlert(title: "We need access", message: "In order to use this app, some permissions related to you Reddit account are required. Please, give them.", okTitle: "Go to reddit") { isAccepted in
+        self.displayAlert(title: "Access requirement", message: "In order to use this app, some permissions related to you Reddit account are required. Please, give them.", okTitle: "Go to reddit") { isAccepted in
             if isAccepted {
                 self.showActivityIndicator()
                 self.emptyView.isHidden = true

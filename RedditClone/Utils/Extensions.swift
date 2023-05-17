@@ -18,6 +18,7 @@ extension Dictionary {
 
 extension Notification.Name {
     static let retrievePosts = Notification.Name("retrievePosts")
+    static let redditPermissionsDeclined = Notification.Name("redditPermissionsDeclined")
 }
 
 extension DateFormatter {
@@ -42,14 +43,16 @@ extension UIViewController {
         return viewController
     }
     
-    func displayAlert(title: String, message: String, okTitle: String, completion: ((Bool) -> ())? = nil) {
+    func displayAlert(title: String, message: String, okTitle: String = "", isSingleButton: Bool = false, completion: ((Bool) -> ())? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let acceptAction = UIAlertAction(title: okTitle, style: .default) { _ in
-            completion?(true)
+        if !isSingleButton {
+            let acceptAction = UIAlertAction(title: okTitle, style: .default) { _ in
+                completion?(true)
+            }
+            acceptAction.setValue(UIColor.red, forKey: "titleTextColor")
+            alertController.addAction(acceptAction)
         }
-        acceptAction.setValue(UIColor.red, forKey: "titleTextColor")
-        alertController.addAction(acceptAction)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+        let cancelAction = UIAlertAction(title: isSingleButton ? "Accept" : "Cancel", style: .cancel) { action in
             completion?(false)
         }
         cancelAction.setValue(UIColor.red, forKey: "titleTextColor")

@@ -29,20 +29,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             firstUrl.absoluteString
         ).objectVersion(type: OAuthResponse.self)
         
-        /// Save the secret client id in UserDefaults.
-        UserDefaultsManager.shared.saveValue(oauthResponse?.code, type: .secretClient)
-        
-        /// Check if the user doesn't have a token.
-        if !Helper.hasToken() {
-            /// Request the token and send a notification to fetch them from requestList() method at HomeViewModel when the token is received.
-            NetworkManager.shared.requestSessionToken { isSuccess in
-                if isSuccess {
-                    NotificationCenter.default.post(name: .retrievePosts, object: nil)
+        if let response = oauthResponse {
+            /// Save the secret client id in UserDefaults.
+            UserDefaultsManager.shared.saveValue(response.code, type: .secretClient)
+            
+            /// Check if the user doesn't have a token.
+            if !Helper.hasToken() {
+                /// Request the token and send a notification to fetch them from requestList() method at HomeViewModel when the token is received.
+                NetworkManager.shared.requestSessionToken { isSuccess in
+                    if isSuccess {
+                        NotificationCenter.default.post(name: .retrievePosts, object: nil)
+                    }
                 }
             }
         } else {
-            /// Send a notification to fetch them from requestList() method at HomeViewModel when the token is received.
-            NotificationCenter.default.post(name: .retrievePosts, object: nil)
+            NotificationCenter.default.post(name: .redditPermissionsDeclined, object: nil)
         }
     }
 
