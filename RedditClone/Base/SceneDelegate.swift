@@ -18,6 +18,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
     }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let firstUrl = URLContexts.first?.url else {
+            return
+        }
+        
+        /// Get the query parameters from the Deeplink and map it to OAuthResponse model.
+        let oauthResponse = NetworkManager.shared.getQueryItems(
+            firstUrl.absoluteString
+        ).objectVersion(type: OAuthResponse.self)
+        
+        /// Save the secret client id in UserDefaults.
+        UserDefaultsManager.shared.saveValue(oauthResponse?.code, type: .secretClient)
+        
+        /// Check if the user doesn't have a token.
+        if !Helper.hasToken() {
+            /// Request the token and send a notification to fetch them from requestList() method at HomeViewModel when the token is received.
+            NetworkManager.shared.requestSessionToken { isSuccess in
+                if isSuccess {
+                    NotificationCenter.default.post(name: .retrievePosts, object: nil)
+                }
+            }
+        } else {
+            /// Send a notification to fetch them from requestList() method at HomeViewModel when the token is received.
+            NotificationCenter.default.post(name: .retrievePosts, object: nil)
+        }
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -41,12 +68,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to undo the changes made on entering the background.
     }
 
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
-    }
-
-
+    func sceneDidEnterBackground(_ scene: UIScene) {}
 }
 

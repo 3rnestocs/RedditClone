@@ -3,27 +3,61 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6379E043A1700CC592F3C474 /* Pods_RedditClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32BDDD7A1266CE08AF479CAA /* Pods_RedditClone.framework */; };
+		8D0188B82A12C871006258B6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0188B72A12C871006258B6 /* NetworkManager.swift */; };
+		8D0188BC2A12DE7A006258B6 /* OauthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0188BB2A12DE7A006258B6 /* OauthResponse.swift */; };
+		8D0188BE2A12DF49006258B6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0188BD2A12DF49006258B6 /* Extensions.swift */; };
+		8D0188C02A12E15F006258B6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0188BF2A12E15F006258B6 /* UserDefaultsManager.swift */; };
+		8D0188C22A12E268006258B6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0188C12A12E268006258B6 /* Helper.swift */; };
+		8D0188C42A12E386006258B6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0188C32A12E386006258B6 /* HomeViewModel.swift */; };
+		8D0188C62A12E678006258B6 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0188C52A12E678006258B6 /* AccessTokenResponse.swift */; };
+		8D0188C82A12EE4A006258B6 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0188C72A12EE4A006258B6 /* GeneralResponse.swift */; };
 		8D01C6052A12875C00812530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D01C6042A12875C00812530 /* AppDelegate.swift */; };
 		8D01C6072A12875C00812530 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D01C6062A12875C00812530 /* SceneDelegate.swift */; };
-		8D01C6092A12875C00812530 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D01C6082A12875C00812530 /* ViewController.swift */; };
+		8D01C6092A12875C00812530 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D01C6082A12875C00812530 /* HomeViewController.swift */; };
 		8D01C60C2A12875C00812530 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D01C60A2A12875C00812530 /* Main.storyboard */; };
 		8D01C60E2A12875E00812530 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D01C60D2A12875E00812530 /* Assets.xcassets */; };
 		8D01C6112A12875E00812530 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D01C60F2A12875E00812530 /* LaunchScreen.storyboard */; };
+		8D01C6232A129EDC00812530 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D01C6212A129EDC00812530 /* HomeTableViewCell.swift */; };
+		8D01C6242A129EDC00812530 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D01C6222A129EDC00812530 /* HomeTableViewCell.xib */; };
+		8D65A2DF2A15434B007AF789 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65A2DE2A15434B007AF789 /* DetailViewController.swift */; };
+		8D65A2E12A1546AC007AF789 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D65A2E02A1546AC007AF789 /* DetailViewModel.swift */; };
+		8D6A448D2A1401AB00B553DF /* Posts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A448B2A1401AB00B553DF /* Posts.xcdatamodeld */; };
+		8D6A44902A1401D000B553DF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A448F2A1401D000B553DF /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08C9AD8295DECF9145B2B56E /* Pods-RedditClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditClone.debug.xcconfig"; path = "Target Support Files/Pods-RedditClone/Pods-RedditClone.debug.xcconfig"; sourceTree = "<group>"; };
+		1246BD9A87FA140343359C9F /* Pods-RedditClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditClone.release.xcconfig"; path = "Target Support Files/Pods-RedditClone/Pods-RedditClone.release.xcconfig"; sourceTree = "<group>"; };
+		32BDDD7A1266CE08AF479CAA /* Pods_RedditClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedditClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0188B72A12C871006258B6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8D0188BB2A12DE7A006258B6 /* OauthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthResponse.swift; sourceTree = "<group>"; };
+		8D0188BD2A12DF49006258B6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8D0188BF2A12E15F006258B6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8D0188C12A12E268006258B6 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		8D0188C32A12E386006258B6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8D0188C52A12E678006258B6 /* AccessTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResponse.swift; sourceTree = "<group>"; };
+		8D0188C72A12EE4A006258B6 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
 		8D01C6012A12875C00812530 /* RedditClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D01C6042A12875C00812530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D01C6062A12875C00812530 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D01C6082A12875C00812530 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D01C6082A12875C00812530 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8D01C60B2A12875C00812530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D01C60D2A12875E00812530 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D01C6102A12875E00812530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D01C6122A12875E00812530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D01C6212A129EDC00812530 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		8D01C6222A129EDC00812530 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		8D65A2DE2A15434B007AF789 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8D65A2E02A1546AC007AF789 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		8D6A448C2A1401AB00B553DF /* Post.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Post.xcdatamodel; sourceTree = "<group>"; };
+		8D6A448F2A1401D000B553DF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8D6A44992A144C1F00B553DF /* PostData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8D6A449A2A144C1F00B553DF /* PostData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6379E043A1700CC592F3C474 /* Pods_RedditClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EDAF5AACE576F31426AC537 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32BDDD7A1266CE08AF479CAA /* Pods_RedditClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		443BDDE918F0576A84A70E69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08C9AD8295DECF9145B2B56E /* Pods-RedditClone.debug.xcconfig */,
+				1246BD9A87FA140343359C9F /* Pods-RedditClone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8D01C5F82A12875C00812530 = {
 			isa = PBXGroup;
 			children = (
 				8D01C6032A12875C00812530 /* RedditClone */,
 				8D01C6022A12875C00812530 /* Products */,
+				443BDDE918F0576A84A70E69 /* Pods */,
+				1EDAF5AACE576F31426AC537 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +110,127 @@
 		8D01C6032A12875C00812530 /* RedditClone */ = {
 			isa = PBXGroup;
 			children = (
-				8D01C6042A12875C00812530 /* AppDelegate.swift */,
-				8D01C6062A12875C00812530 /* SceneDelegate.swift */,
-				8D01C6082A12875C00812530 /* ViewController.swift */,
-				8D01C60A2A12875C00812530 /* Main.storyboard */,
-				8D01C60D2A12875E00812530 /* Assets.xcassets */,
-				8D01C60F2A12875E00812530 /* LaunchScreen.storyboard */,
-				8D01C6122A12875E00812530 /* Info.plist */,
+				8D01C6182A12886600812530 /* Model */,
+				8D01C6192A12886D00812530 /* View */,
+				8D01C61A2A12887100812530 /* ViewModel */,
+				8D01C61C2A12888100812530 /* Base */,
+				8D01C61D2A12889200812530 /* Resources */,
+				8D01C61B2A12887600812530 /* Utils */,
 			);
 			path = RedditClone;
+			sourceTree = "<group>";
+		};
+		8D01C6182A12886600812530 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D0188BB2A12DE7A006258B6 /* OauthResponse.swift */,
+				8D0188C52A12E678006258B6 /* AccessTokenResponse.swift */,
+				8D0188C72A12EE4A006258B6 /* GeneralResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D01C6192A12886D00812530 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D01C61E2A1288A000812530 /* Storyboard */,
+				8D01C61F2A1288BE00812530 /* Scene */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D01C61A2A12887100812530 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8D0188C32A12E386006258B6 /* HomeViewModel.swift */,
+				8D65A2E02A1546AC007AF789 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8D01C61B2A12887600812530 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D0188B72A12C871006258B6 /* NetworkManager.swift */,
+				8D0188BD2A12DF49006258B6 /* Extensions.swift */,
+				8D0188BF2A12E15F006258B6 /* UserDefaultsManager.swift */,
+				8D0188C12A12E268006258B6 /* Helper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8D01C61C2A12888100812530 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8D01C6122A12875E00812530 /* Info.plist */,
+				8D01C6042A12875C00812530 /* AppDelegate.swift */,
+				8D01C6062A12875C00812530 /* SceneDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8D01C61D2A12889200812530 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D6A448E2A1401C500B553DF /* CoreData */,
+				8D01C60D2A12875E00812530 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8D01C61E2A1288A000812530 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8D01C60A2A12875C00812530 /* Main.storyboard */,
+				8D01C60F2A12875E00812530 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8D01C61F2A1288BE00812530 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8D65A2DC2A15431F007AF789 /* Home */,
+				8D65A2DD2A154326007AF789 /* Detail */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		8D01C6202A129ECB00812530 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8D01C6212A129EDC00812530 /* HomeTableViewCell.swift */,
+				8D01C6222A129EDC00812530 /* HomeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8D65A2DC2A15431F007AF789 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8D01C6202A129ECB00812530 /* Cell */,
+				8D01C6082A12875C00812530 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8D65A2DD2A154326007AF789 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8D65A2DE2A15434B007AF789 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		8D6A448E2A1401C500B553DF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8D6A448F2A1401D000B553DF /* CoreDataManager.swift */,
+				8D6A44992A144C1F00B553DF /* PostData+CoreDataClass.swift */,
+				8D6A449A2A144C1F00B553DF /* PostData+CoreDataProperties.swift */,
+				8D6A448B2A1401AB00B553DF /* Posts.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D01C6152A12875E00812530 /* Build configuration list for PBXNativeTarget "RedditClone" */;
 			buildPhases = (
+				56C8179DFAFE674E08BF182B /* [CP] Check Pods Manifest.lock */,
 				8D01C5FD2A12875C00812530 /* Sources */,
 				8D01C5FE2A12875C00812530 /* Frameworks */,
 				8D01C5FF2A12875C00812530 /* Resources */,
+				7BF29F9834A7EE1E6BEDA870 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,7 +271,7 @@
 				};
 			};
 			buildConfigurationList = 8D01C5FC2A12875C00812530 /* Build configuration list for PBXProject "RedditClone" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -127,20 +295,76 @@
 			files = (
 				8D01C6112A12875E00812530 /* LaunchScreen.storyboard in Resources */,
 				8D01C60E2A12875E00812530 /* Assets.xcassets in Resources */,
+				8D01C6242A129EDC00812530 /* HomeTableViewCell.xib in Resources */,
 				8D01C60C2A12875C00812530 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		56C8179DFAFE674E08BF182B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RedditClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BF29F9834A7EE1E6BEDA870 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RedditClone/Pods-RedditClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RedditClone/Pods-RedditClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RedditClone/Pods-RedditClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D01C5FD2A12875C00812530 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D01C6092A12875C00812530 /* ViewController.swift in Sources */,
+				8D6A44902A1401D000B553DF /* CoreDataManager.swift in Sources */,
+				8D01C6092A12875C00812530 /* HomeViewController.swift in Sources */,
+				8D0188C82A12EE4A006258B6 /* GeneralResponse.swift in Sources */,
+				8D0188BE2A12DF49006258B6 /* Extensions.swift in Sources */,
 				8D01C6052A12875C00812530 /* AppDelegate.swift in Sources */,
+				8D0188C42A12E386006258B6 /* HomeViewModel.swift in Sources */,
+				8D0188B82A12C871006258B6 /* NetworkManager.swift in Sources */,
+				8D01C6232A129EDC00812530 /* HomeTableViewCell.swift in Sources */,
+				8D0188C22A12E268006258B6 /* Helper.swift in Sources */,
+				8D0188BC2A12DE7A006258B6 /* OauthResponse.swift in Sources */,
+				8D0188C02A12E15F006258B6 /* UserDefaultsManager.swift in Sources */,
 				8D01C6072A12875C00812530 /* SceneDelegate.swift in Sources */,
+				8D65A2DF2A15434B007AF789 /* DetailViewController.swift in Sources */,
+				8D0188C62A12E678006258B6 /* AccessTokenResponse.swift in Sources */,
+				8D6A448D2A1401AB00B553DF /* Posts.xcdatamodeld in Sources */,
+				8D65A2E12A1546AC007AF789 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +506,7 @@
 		};
 		8D01C6162A12875E00812530 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08C9AD8295DECF9145B2B56E /* Pods-RedditClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -289,12 +514,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HVPZG85R23;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RedditClone/Info.plist;
+				INFOPLIST_FILE = RedditClone/Base/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +534,7 @@
 		};
 		8D01C6172A12875E00812530 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1246BD9A87FA140343359C9F /* Pods-RedditClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,12 +542,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HVPZG85R23;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RedditClone/Info.plist;
+				INFOPLIST_FILE = RedditClone/Base/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +582,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D6A448B2A1401AB00B553DF /* Posts.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D6A448C2A1401AB00B553DF /* Post.xcdatamodel */,
+			);
+			currentVersion = 8D6A448C2A1401AB00B553DF /* Post.xcdatamodel */;
+			path = Posts.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8D01C5F92A12875C00812530 /* Project object */;
 }
