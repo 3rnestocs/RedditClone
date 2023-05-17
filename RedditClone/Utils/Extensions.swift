@@ -41,6 +41,23 @@ extension UIViewController {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: vc.rawValue)
         return viewController
     }
+    
+    func displayAlert(title: String, message: String, okTitle: String, completion: ((Bool) -> ())? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let acceptAction = UIAlertAction(title: okTitle, style: .default) { _ in
+            completion?(true)
+        }
+        acceptAction.setValue(UIColor.red, forKey: "titleTextColor")
+        alertController.addAction(acceptAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            completion?(false)
+        }
+        cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
+        alertController.addAction(cancelAction)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }
 
 extension UIColor {

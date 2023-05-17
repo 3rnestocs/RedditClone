@@ -12,13 +12,8 @@ class HomeViewModel {
     
     // MARK: - Properties
     var didFailed: ((String?) -> Void)?
-    private var posts: [RedditPost]? {
-        didSet {
-            posts?.sort(by: {
-                $0.createdUTC ?? 0 < $1.createdUTC ?? 0
-            })
-        }
-    }
+    var displayAlert: (() -> ())?
+    private var posts: [RedditPost]?
     private var pagesArray: [String] = [] {
         didSet {
             self.requestList()
@@ -52,8 +47,9 @@ class HomeViewModel {
         /// Check if the first posts page exist in CoreData.
         CoreDataManager.shared.getPosts { persistedPosts in
             if persistedPosts.isEmpty {
-                /// Posts request flow.
-                self.requestTokenAPIs()
+                DispatchQueue.main.async {
+                    self.displayAlert?()
+                }
             } else {
                 /// Display the posts fetched from CoreData.
                 self.posts = persistedPosts.map({RedditPost.persisted(from: $0)})
@@ -63,7 +59,7 @@ class HomeViewModel {
         }
     }
     
-    private func requestTokenAPIs() {
+    func requestTokenAPIs() {
         /// Check if user has secret client id.
         if Helper.isAuthenticated() {
             /// Check if user has session token.

@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: UIView!
     
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var tryAgainButton: UIButton!
     // MARK: - Properties
     private let viewModel = HomeViewModel()
     private var activityIndicatorView: UIActivityIndicatorView!
@@ -32,6 +34,14 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         setupNavigationBar()
         setupTableView()
+        setupContent()
+    }
+    
+    private func setupContent() {
+        emptyView.layer.borderWidth = 1
+        emptyView.layer.borderColor = UIColor.lightGray.cgColor
+        emptyView.layer.cornerRadius = 16
+        
     }
     
     private func setupData() {
@@ -45,6 +55,10 @@ class HomeViewController: UIViewController {
                 }
             }
             self.hideActivityIndicator()
+            self.loadingView.isHidden = true
+        }
+        viewModel.displayAlert = {
+            self.displayRedditAlert()
         }
     }
     
@@ -60,6 +74,7 @@ class HomeViewController: UIViewController {
     }
     
     private func showActivityIndicator() {
+        hideActivityIndicator()
         activityIndicatorView = UIActivityIndicatorView(style: .large)
         loadingView.isHidden = false
         let frameSize: CGPoint = CGPoint(
@@ -72,18 +87,38 @@ class HomeViewController: UIViewController {
         activityIndicatorView?.startAnimating()
     }
     
-    private func hideActivityIndicator() {
+    private func hideActivityIndicator(isEmpty: Bool = false) {
         if activityIndicatorView != nil {
             activityIndicatorView?.stopAnimating()
             activityIndicatorView = nil
-            loadingView.isHidden = true
         }
+        emptyView.isHidden = !isEmpty
+    }
+    
+    private func displayRedditAlert() {
+        self.displayAlert(title: "We need access", message: "In order to use this app, some permissions related to you Reddit account are required. Please, give them.", okTitle: "Go to reddit") { isAccepted in
+            if isAccepted {
+                self.showActivityIndicator()
+                self.emptyView.isHidden = true
+                self.viewModel.requestTokenAPIs()
+            } else {
+                self.hideActivityIndicator(isEmpty: true)
+            }
+        }
+    }
+    
+    @IBAction private func tryAgainButtonTapped(_ sender: UIButton) {
+        self.displayRedditAlert()
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.getPosts().count + 1
+        if viewModel.getPosts().isEmpty {
+            return 0
+        } else {
+            return viewModel.getPosts().count + 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
